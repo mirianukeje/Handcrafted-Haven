@@ -31,8 +31,7 @@ Handcrafted Haven is a web application that brings together talented artisans an
 - Optional accents: Cursive/handwriting fonts → `font-handwriting`  
 
 **UI & Layout Evidence:**  
-- Product cards: `rounded-lg`, `shadow-md`, hover effect `hover:shadow-xl`  
-- Grid layout for products: `grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6`  
+- Product cards: `rounded-lg`, `shadow-md`, hover effect `hover:shadow-xl`   
 - Buttons: Primary: Sienna brown with white text, hover changes to soft green  
 
 ---
