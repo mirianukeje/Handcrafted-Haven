@@ -3,27 +3,48 @@
 ## About the Project
 Handcrafted Haven is a web application that brings together talented artisans and people who love unique, handcrafted items. It’s a place where creators can share their stories and showcase their products, and where shoppers can discover one-of-a-kind treasures. Our goal is to support creativity, promote sustainable shopping, and build a community of makers and buyers who care about quality and craftsmanship.
 
-## What It Does
-- **Artisan Profiles** – Sellers can create profiles, tell their story, and show off their products.  
-- **Product Listings** – Add items with images, descriptions, and prices so buyers can easily browse.  
-- **Reviews & Ratings** – Customers can leave feedback to help others make decisions.  
-- **Responsive Design** – Works on desktops, tablets, and phones.  
-- **Accessible & Easy to Use** – Built with accessibility in mind so everyone can enjoy it.
+## Features
+- **Artisan Profiles** – Sellers can create profiles, share their story, and showcase their products.  
+- **Product Listings** – Add items with images, descriptions, and prices for easy browsing.  
+- **Reviews & Ratings** – Users can leave feedback to help others make decisions.  
+- **Responsive Design** – Works smoothly on desktops, tablets, and phones.  
+- **Accessible & User-Friendly** – Built with accessibility standards in mind.
 
-## Technologies We Used
+## Technologies Used
 - **Front-End:** HTML, CSS, JavaScript, Next.js  
-- **Back-End:** Node.js, Database (MongoDB or PostgreSQL)  
+- **Back-End:** Node.js with a database (MongoDB or PostgreSQL)  
 - **Project Management:** GitHub Boards  
+- **Code Management:** Git & GitHub  
 - **Deployment:** Vercel  
+
+## Design & Styling Evidence
+**Color Scheme:**  
+- Primary: `#A0522D` – warm sienna brown (buttons, headers)  
+- Secondary: `#F5DEB3` – wheat (card backgrounds, sections)  
+- Accent: `#8FBC8F` – soft green (highlights, call-to-action buttons)  
+- Text: `#333333` – dark charcoal  
+- Background: `#FFF8F0` – soft off-white  
+
+**Typography:**  
+- Headings: Serif fonts (`Merriweather`, `Playfair Display`) → `font-serif`  
+- Body text: Sans-serif fonts (`Inter`, `Roboto`) → `font-sans`  
+- Optional accents: Cursive/handwriting fonts → `font-handwriting`  
+
+**UI & Layout Evidence:**  
+- Product cards: `rounded-lg`, `shadow-md`, hover effect `hover:shadow-xl`  
+- Grid layout for products: `grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6`  
+- Buttons: Primary: Sienna brown with white text, hover changes to soft green  
+
+---
 
 ## Our Team
 - **Ukeje Adadinobi Mirian** – Group Leader  
-- Member 2 Matthew Onome Akhabue 
-- Member 3 Richard Oshiomole Ogboanoh  
-- Member 4 Nirintsoa Liva Jhonson Rabarih  
+- **Matthew Onome Akhabue**  
+- **Richard Oshiomole Ogboanoh**  
+- **Nirintsoa Liva Jhonson Rabarih**  
 
 ## Why We Built This
-We wanted to make a space where artisans could reach more people and where buyers could find products that feel personal and special. This project also gave us a chance to work together as a team, practice real-world web development, and learn how to bring an idea to life from start to finish.  
+We wanted to create a space where artisans can reach more people and where buyers can find products that feel personal and special. This project also gave our team a chance to learn full-stack web development, collaborate effectively, and bring an idea to life from start to finish.
 
 ## How to Run It Locally
 1. Clone the repository:  
