@@ -38,7 +38,7 @@ Handcrafted Haven is a web application that brings together talented artisans an
 ---
 
 ## Our Team
-- **Ukeje Adadinobi Mirian** – Group Leader  
+- **Ukeje Adadinobi Mirian**  
 - **Matthew Onome Akhabue**  
 - **Richard Oshiomole Ogboanoh**  
 - **Nirintsoa Liva Jhonson Rabarih**  
