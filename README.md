@@ -28,7 +28,7 @@ Handcrafted Haven is a web application that brings together talented artisans an
 **Typography:**  
 - Headings: Serif fonts (`Merriweather`, `Playfair Display`) → `font-serif`  
 - Body text: Sans-serif fonts (`Inter`, `Roboto`) → `font-sans`  
-- Optional accents: Cursive/handwriting fonts → `font-handwriting`  
+ 
 
 **UI & Layout Evidence:**  
 - Product cards: `rounded-lg`, `shadow-md`, hover effect `hover:shadow-xl`   
