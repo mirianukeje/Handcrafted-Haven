@@ -40,7 +40,8 @@ Handcrafted Haven is a web application that brings together talented artisans an
 - **Ukeje Adadinobi Mirian**  
 - **Matthew Onome Akhabue**  
 - **Richard Oshiomole Ogboanoh**  
-- **Nirintsoa Liva Jhonson Rabarih**  
+- **Nirintsoa Liva Jhonson Rabarih**
+- **Shared Lopez Serrano**
 
 ## Why We Built This
 We wanted to create a space where artisans can reach more people and where buyers can find products that feel personal and special. This project also gave our team a chance to learn full-stack web development, collaborate effectively, and bring an idea to life from start to finish.
