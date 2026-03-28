@@ -1,3 +1,50 @@
+// ===============================
+// TESTING CHECKLIST (USE THIS FOR SUBMISSION)
+// ===============================
+
+/*
+✅ RESPONSIVENESS
+- Mobile (≤640px): navbar collapses, 1 column grid
+- Tablet (≥640px): 2 columns
+- Desktop (≥768px): 3 columns
+
+✅ ACCESSIBILITY (WCAG 2.1 BASICS)
+- Buttons have clear labels
+- Images have alt/aria labels
+- Good color contrast
+- Semantic HTML used (header, main, section, footer)
+
+✅ UI / UX
+- Consistent spacing (padding, margin)
+- Smooth hover effects
+- Readable typography
+
+✅ FUNCTIONALITY
+- Mobile menu toggles correctly
+- Buttons clickable
+- No console errors
+
+✅ FINAL CHECK
+- Test on Chrome DevTools
+- Test resizing screen manually
+- Ensure no layout breaks
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Handcrafted Haven
 
 ## About the Project
