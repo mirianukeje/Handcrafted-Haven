@@ -1,7 +1,6 @@
-// components/layout/Footer.jsx
 export default function Footer() {
   return (
-    <footer className="text-center py-6 bg-white mt-10 border-t text-sm">
+    <footer className="mt-10 border-t bg-white py-6 text-center text-sm text-gray-600">
       <p>© {new Date().getFullYear()} Handcrafted Haven. All rights reserved.</p>
     </footer>
   );
