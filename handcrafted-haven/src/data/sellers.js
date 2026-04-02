@@ -5,7 +5,7 @@ export const sellers = [
     bio: "I create handmade crafts using sustainable materials.",
     story:
       "I started crafting as a passion and turned it into a business. Every product is made with care and love.",
-    image: "/profile.png",
+    image: "/livaprofile.png",
     products: [
       {
         id: 1,
@@ -29,7 +29,7 @@ export const sellers = [
     name: "Shared Lopez",
     bio: "I specialize in handmade crafts.",
     story:"Crafting has been a part of my life for years. I love creating unique pieces that bring joy to others.",
-    image: "/profile.png",
+    image: "/serranoprofile.jfif",
     products: [
       {
         id: 3,
