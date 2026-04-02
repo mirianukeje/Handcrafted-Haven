@@ -24,4 +24,34 @@ export const sellers = [
       },
     ],
   },
+  {
+    username: "shared",
+    name: "Shared Lopez",
+    bio: "I specialize in handmade crafts.",
+    story:"Crafting has been a part of my life for years. I love creating unique pieces that bring joy to others.",
+    image: "/profile.png",
+    products: [
+      {
+        id: 3,
+        title: "Ceramic Mug",
+        description: "Handcrafted ceramic mug, perfect for coffee lovers.",
+        price: 20,
+        image: "/ceramic-mug.jpg",
+      },
+      {
+        id: 4,
+        title: "Macrame Wall Hanging",
+        description: "Beautiful boho-style macrame decor.",
+        price: 30,
+        image: "/macrame-wall.webp",
+      },
+      {
+        id: 5,
+        title: "Leather Wallet",
+        description: "Durable handmade leather wallet.",
+        price: 45,
+        image: "/wallet-handmade.jpg",
+      },
+    ],
+  }
 ];
