@@ -28,7 +28,8 @@ export const sellers = [
     username: "shared",
     name: "Shared Lopez",
     bio: "I specialize in handmade crafts.",
-    story:"Crafting has been a part of my life for years. I love creating unique pieces that bring joy to others.",
+    story:
+      "Crafting has been a part of my life for years. I love creating unique pieces that bring joy to others.",
     image: "/serranoprofile.jfif",
     products: [
       {
@@ -53,5 +54,17 @@ export const sellers = [
         image: "/wallet-handmade.jpg",
       },
     ],
-  }
+  },
 ];
+
+export const allProducts = sellers.flatMap((seller) =>
+  seller.products.map((product) => ({
+    ...product,
+    sellerName: seller.name,
+    sellerUsername: seller.username,
+  }))
+);
+
+export function getProductById(id) {
+  return allProducts.find((product) => product.id === Number(id));
+}
