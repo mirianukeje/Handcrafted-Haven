@@ -87,7 +87,10 @@ export default function SellerProfile({ username }) {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {seller.products.map((product) => (
-              <ProductCard key={product.id} product={{ ...product, sellerName: seller.name }} />
+              <ProductCard
+                key={product.id}
+                product={{ ...product, sellerName: seller.name }}
+              />
             ))}
           </div>
         </section>
