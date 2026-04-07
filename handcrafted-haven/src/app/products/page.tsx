@@ -1,7 +1,38 @@
-import { allProducts } from "@/data/sellers";
 import ProductCard from "@/components/products/ProductCard";
+import { prisma } from "@/lib/prisma";
 
-export default function ProductsPage() {
+type FormattedProduct = {
+  id: string;
+  title: string;
+  description: string | null;
+  price: number;
+  image: string | null;
+  sellerName: string;
+  sellerUsername: string;
+};
+
+export default async function ProductsPage() {
+  const products = await prisma.product.findMany({
+    include: {
+      seller: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  const formattedProducts: FormattedProduct[] = products.map(
+    (product: (typeof products)[number]) => ({
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      image: product.image,
+      sellerName: product.seller.name,
+      sellerUsername: product.seller.username,
+    })
+  );
+
   return (
     <main className="min-h-screen bg-[#FFF8F0] px-6 py-12">
       <div className="mx-auto max-w-7xl">
@@ -14,13 +45,13 @@ export default function ProductsPage() {
           </p>
         </header>
 
-        {allProducts.length === 0 ? (
+        {formattedProducts.length === 0 ? (
           <p className="font-sans text-gray-600">
             No products available at the moment.
           </p>
         ) : (
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {allProducts.map((product) => (
+            {formattedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

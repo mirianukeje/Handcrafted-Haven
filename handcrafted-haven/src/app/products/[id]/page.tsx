@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProductById } from "@/data/sellers";
+import { prisma } from "@/lib/prisma";
 
 type PageProps = {
   params: Promise<{
@@ -9,7 +9,13 @@ type PageProps = {
 
 export default async function ProductDetailsPage({ params }: PageProps) {
   const { id } = await params;
-  const product = getProductById(id);
+
+  const product = await prisma.product.findUnique({
+    where: { id },
+    include: {
+      seller: true,
+    },
+  });
 
   if (!product) {
     return (
@@ -48,7 +54,7 @@ export default async function ProductDetailsPage({ params }: PageProps) {
         <div className="grid gap-10 rounded-2xl bg-white p-8 shadow-lg md:grid-cols-2">
           <div className="overflow-hidden rounded-xl">
             <img
-              src={product.image}
+              src={product.image || ""}
               alt={product.title}
               className="h-full w-full object-cover"
             />
@@ -66,10 +72,10 @@ export default async function ProductDetailsPage({ params }: PageProps) {
             <p className="mt-3 text-sm text-gray-500">
               by{" "}
               <Link
-                href={`/sellers/${product.sellerUsername}`}
+                href={`/sellers/${product.seller.username}`}
                 className="font-medium text-[#A0522D] hover:underline"
               >
-                {product.sellerName}
+                {product.seller.name}
               </Link>
             </p>
 
@@ -87,7 +93,7 @@ export default async function ProductDetailsPage({ params }: PageProps) {
               </button>
 
               <Link
-                href={`/sellers/${product.sellerUsername}`}
+                href={`/sellers/${product.seller.username}`}
                 className="rounded-lg border border-[#A0522D] px-6 py-3 font-medium text-[#A0522D] transition hover:bg-[#A0522D] hover:text-white"
               >
                 Visit Seller
