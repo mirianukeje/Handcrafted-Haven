@@ -1,7 +1,16 @@
 import Link from "next/link";
-import { sellers } from "@/data/sellers";
+import { prisma } from "@/lib/prisma";
 
-export default function SellersPage() {
+export default async function SellersPage() {
+  const sellers = await prisma.seller.findMany({
+    include: {
+      products: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
   return (
     <main className="min-h-screen bg-stone-50 py-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -20,13 +29,13 @@ export default function SellersPage() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {sellers.map((seller) => (
             <Link
-              key={seller.username}
+              key={seller.id}
               href={`/sellers/${seller.username}`}
               className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="flex items-center gap-4">
                 <img
-                  src={seller.image}
+                  src={seller.image || ""}
                   alt={seller.name}
                   className="h-16 w-16 rounded-full object-cover"
                 />
