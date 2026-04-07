@@ -7,6 +7,16 @@ type PageProps = {
   }>;
 };
 
+type SellerProduct = {
+  id: string;
+  title: string;
+  description: string | null;
+  price: number;
+  image: string | null;
+  sellerName: string;
+  sellerUsername: string;
+};
+
 export default async function SellerPage({ params }: PageProps) {
   const { username } = await params;
 
@@ -30,15 +40,17 @@ export default async function SellerPage({ params }: PageProps) {
     );
   }
 
-  const products = seller.products.map((product) => ({
-    id: product.id,
-    title: product.title,
-    description: product.description,
-    price: product.price,
-    image: product.image,
-    sellerName: seller.name,
-    sellerUsername: seller.username,
-  }));
+  const products: SellerProduct[] = seller.products.map(
+    (product: (typeof seller.products)[number]) => ({
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      image: product.image,
+      sellerName: seller.name,
+      sellerUsername: seller.username,
+    })
+  );
 
   return (
     <main className="min-h-screen bg-stone-50 py-10">
