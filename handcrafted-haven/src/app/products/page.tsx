@@ -21,15 +21,17 @@ export default async function ProductsPage() {
     },
   });
 
-  const formattedProducts: FormattedProduct[] = products.map((product) => ({
-    id: product.id,
-    title: product.title,
-    description: product.description,
-    price: product.price,
-    image: product.image,
-    sellerName: product.seller.name,
-    sellerUsername: product.seller.username,
-  }));
+  const formattedProducts: FormattedProduct[] = products.map(
+    (product: (typeof products)[number]) => ({
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      image: product.image,
+      sellerName: product.seller.name,
+      sellerUsername: product.seller.username,
+    })
+  );
 
   return (
     <main className="min-h-screen bg-[#FFF8F0] px-6 py-12">
