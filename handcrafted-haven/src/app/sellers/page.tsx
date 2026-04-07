@@ -1,10 +1,23 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
+type SellerCard = {
+  id: string;
+  username: string;
+  name: string;
+  bio: string | null;
+  image: string | null;
+  products: { id: string }[];
+};
+
 export default async function SellersPage() {
-  const sellers = await prisma.seller.findMany({
+  const sellers: SellerCard[] = await prisma.seller.findMany({
     include: {
-      products: true,
+      products: {
+        select: {
+          id: true,
+        },
+      },
     },
     orderBy: {
       createdAt: "desc",
@@ -27,7 +40,7 @@ export default async function SellersPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {sellers.map((seller) => (
+          {sellers.map((seller: SellerCard) => (
             <Link
               key={seller.id}
               href={`/sellers/${seller.username}`}
