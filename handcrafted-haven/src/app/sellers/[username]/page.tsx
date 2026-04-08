@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+import Link from "next/link";
 import ProductCard from "@/components/products/ProductCard";
 import { prisma } from "@/lib/prisma";
 
@@ -35,6 +37,12 @@ export default async function SellerPage({ params }: PageProps) {
           <p className="mt-2 text-gray-600">
             We could not find the seller profile you requested.
           </p>
+          <Link
+            href="/sellers"
+            className="mt-6 inline-block text-sm font-medium text-[#A0522D] hover:underline"
+          >
+            ← Back to Sellers
+          </Link>
         </div>
       </main>
     );
@@ -55,6 +63,15 @@ export default async function SellerPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-stone-50 py-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <Link
+            href="/sellers"
+            className="text-sm font-medium text-[#A0522D] hover:underline"
+          >
+            ← Back to Sellers
+          </Link>
+        </div>
+
         <section className="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm">
           <div className="h-28 bg-gradient-to-r from-amber-700 via-orange-500 to-amber-300 sm:h-32" />
 
@@ -120,11 +137,17 @@ export default async function SellerPage({ params }: PageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {products.length === 0 ? (
+            <div className="rounded-2xl bg-white p-8 text-center shadow-sm">
+              <p className="text-gray-600">This seller has no products yet.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </main>
