@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import ProductCard from "@/components/products/ProductCard";
 import { prisma } from "@/lib/prisma";
 
