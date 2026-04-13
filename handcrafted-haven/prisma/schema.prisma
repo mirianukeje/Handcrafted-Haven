@@ -15,6 +15,8 @@ model Seller {
   bio       String?
   story     String?
   image     String?
+  userId    String    @unique
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   products  Product[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -30,4 +32,13 @@ model Product {
   seller      Seller   @relation(fields: [sellerId], references: [id], onDelete: Cascade)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  seller       Seller?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
