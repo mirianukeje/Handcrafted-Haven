@@ -48,12 +48,20 @@ export default function Navbar() {
               <SignOutButton className="rounded-lg bg-[#A0522D] px-4 py-2 text-white transition hover:bg-[#8b4513]" />
             </>
           ) : (
-            <Link
-              href="/sign-in"
-              className="rounded-lg bg-[#A0522D] px-4 py-2 text-white transition hover:bg-[#8b4513]"
-            >
-              Sign In
-            </Link>
+            <>
+              <Link
+                href="/sign-up"
+                className="rounded-lg border border-[#A0522D] px-4 py-2 font-medium text-[#A0522D] transition hover:bg-[#A0522D] hover:text-white"
+              >
+                Register
+              </Link>
+              <Link
+                href="/sign-in"
+                className="rounded-lg bg-[#A0522D] px-4 py-2 text-white transition hover:bg-[#8b4513]"
+              >
+                Sign In
+              </Link>
+            </>
           )}
         </nav>
 
@@ -104,13 +112,22 @@ export default function Navbar() {
             <SignOutButton className="w-full rounded-lg bg-[#A0522D] px-4 py-2 text-white transition hover:bg-[#8b4513]" />
           </div>
         ) : (
-          <Link
-            href="/sign-in"
-            className="mt-4 block w-full rounded-lg bg-[#A0522D] px-4 py-2 text-center text-white transition hover:bg-[#8b4513]"
-            onClick={() => setOpen(false)}
-          >
-            Sign In
-          </Link>
+          <div className="mt-4 space-y-3">
+            <Link
+              href="/sign-up"
+              className="block w-full rounded-lg border border-[#A0522D] px-4 py-2 text-center font-medium text-[#A0522D] transition hover:bg-[#A0522D] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Register
+            </Link>
+            <Link
+              href="/sign-in"
+              className="block w-full rounded-lg bg-[#A0522D] px-4 py-2 text-center text-white transition hover:bg-[#8b4513]"
+              onClick={() => setOpen(false)}
+            >
+              Sign In
+            </Link>
+          </div>
         )}
       </div>
     </header>
