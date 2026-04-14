@@ -35,6 +35,25 @@ export default async function NewProductPage() {
 
           <div>
             <label
+              htmlFor="category"
+              className="mb-2 block text-sm font-semibold text-stone-700"
+            >
+              Category
+            </label>
+            <input
+              id="category"
+              name="category"
+              type="text"
+              required
+              className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-[#A0522D] focus:ring-2 focus:ring-[#A0522D]/20"
+              placeholder="Home Decor"
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <div>
+            <label
               htmlFor="price"
               className="mb-2 block text-sm font-semibold text-stone-700"
             >
@@ -48,6 +67,22 @@ export default async function NewProductPage() {
               step="0.01"
               required
               className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-[#A0522D] focus:ring-2 focus:ring-[#A0522D]/20"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="material"
+              className="mb-2 block text-sm font-semibold text-stone-700"
+            >
+              Material
+            </label>
+            <input
+              id="material"
+              name="material"
+              type="text"
+              className="w-full rounded-xl border border-stone-300 px-4 py-3 outline-none transition focus:border-[#A0522D] focus:ring-2 focus:ring-[#A0522D]/20"
+              placeholder="Cotton cord"
             />
           </div>
         </div>

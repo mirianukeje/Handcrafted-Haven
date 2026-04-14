@@ -102,12 +102,20 @@ export default async function SellerDashboardPage() {
                       className="h-20 w-20 rounded-2xl object-cover"
                     />
                     <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A0522D]">
+                        {product.category}
+                      </p>
                       <h4 className="text-lg font-semibold text-stone-900">
                         {product.title}
                       </h4>
                       <p className="mt-1 text-sm text-stone-600">
                         ${product.price.toFixed(2)}
                       </p>
+                      {product.material ? (
+                        <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-500">
+                          Material: {product.material}
+                        </p>
+                      ) : null}
                       <p className="mt-2 max-w-xl text-sm leading-6 text-stone-500">
                         {product.description || "No description yet."}
                       </p>

@@ -6,6 +6,8 @@ import { getAuthSession } from "@/lib/auth";
 type SignInPageProps = {
   searchParams: Promise<{
     callbackUrl?: string;
+    email?: string;
+    registered?: string;
   }>;
 };
 
@@ -18,6 +20,8 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
 
   const resolvedSearchParams = await searchParams;
   const callbackUrl = resolvedSearchParams.callbackUrl || "/seller/dashboard";
+  const defaultEmail = resolvedSearchParams.email || "";
+  const wasRegistered = resolvedSearchParams.registered === "1";
 
   return (
     <main className="min-h-screen bg-[#FFF8F0] px-6 py-16">
@@ -67,12 +71,25 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
             </p>
           </div>
 
-          <SignInForm callbackUrl={callbackUrl} />
+          {wasRegistered ? (
+            <p className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+              Seller account created. Sign in to open your dashboard.
+            </p>
+          ) : null}
+
+          <SignInForm callbackUrl={callbackUrl} defaultEmail={defaultEmail} />
 
           <p className="mt-6 text-sm text-stone-600">
             Looking for the public marketplace?{" "}
             <Link href="/products" className="font-semibold text-[#A0522D] hover:underline">
               Browse products
+            </Link>
+          </p>
+
+          <p className="mt-3 text-sm text-stone-600">
+            Need an account?{" "}
+            <Link href="/sign-up" className="font-semibold text-[#A0522D] hover:underline">
+              Register as a seller
             </Link>
           </p>
         </section>

@@ -6,9 +6,13 @@ import { useRouter } from "next/navigation";
 
 type SignInFormProps = {
   callbackUrl: string;
+  defaultEmail?: string;
 };
 
-export default function SignInForm({ callbackUrl }: SignInFormProps) {
+export default function SignInForm({
+  callbackUrl,
+  defaultEmail = "",
+}: SignInFormProps) {
   const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,6 +57,7 @@ export default function SignInForm({ callbackUrl }: SignInFormProps) {
           type="email"
           required
           autoComplete="email"
+          defaultValue={defaultEmail}
           className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-stone-900 outline-none transition focus:border-[#A0522D] focus:ring-2 focus:ring-[#A0522D]/20"
           placeholder="seller@handcraftedhaven.test"
         />
