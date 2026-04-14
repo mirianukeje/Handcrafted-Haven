@@ -25,11 +25,14 @@ model Seller {
 model Product {
   id          String   @id @default(cuid())
   title       String
+  category    String
   description String?
+  material    String?
   price       Float
   image       String?
   sellerId    String
   seller      Seller   @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  reviews     Review[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -41,4 +44,16 @@ model User {
   seller       Seller?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  buyerName  String
+  buyerEmail String
+  rating     Int
+  comment    String
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

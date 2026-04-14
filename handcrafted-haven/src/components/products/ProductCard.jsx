@@ -13,12 +13,20 @@ export default function ProductCard({ product }) {
         />
       </div>
       <div className="p-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A0522D]">
+          {product.category}
+        </p>
         <h3 className="font-serif text-lg font-semibold text-[#333333]">
           {product.title}
         </h3>
         <p className="mt-2 font-sans text-sm text-gray-700">
           {product.description}
         </p>
+        {product.material ? (
+          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-gray-500">
+            Material: {product.material}
+          </p>
+        ) : null}
         <p className="mt-2 text-sm text-gray-500">
           by {product.sellerName}
         </p>

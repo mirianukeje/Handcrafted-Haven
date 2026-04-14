@@ -12,6 +12,8 @@ type PageProps = {
 type SellerProduct = {
   id: string;
   title: string;
+  category: string;
+  material: string | null;
   description: string | null;
   price: number;
   image: string | null;
@@ -52,6 +54,8 @@ export default async function SellerPage({ params }: PageProps) {
     (product: (typeof seller.products)[number]) => ({
       id: product.id,
       title: product.title,
+      category: product.category,
+      material: product.material,
       description: product.description,
       price: product.price,
       image: product.image,

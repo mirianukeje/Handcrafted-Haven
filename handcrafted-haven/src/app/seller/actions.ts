@@ -84,17 +84,21 @@ export async function createProduct(formData: FormData) {
   const { seller } = await requireSellerSession("/seller/dashboard/products/new");
 
   const title = readTrimmedString(formData, "title");
+  const category = readTrimmedString(formData, "category");
+  const material = readOptionalString(formData, "material");
   const description = readOptionalString(formData, "description");
   const image = readOptionalString(formData, "image");
   const price = parsePrice(readTrimmedString(formData, "price"));
 
-  if (!title) {
-    throw new Error("Product title is required.");
+  if (!title || !category) {
+    throw new Error("Product title and category are required.");
   }
 
   const product = await prisma.product.create({
     data: {
       title,
+      category,
+      material,
       description,
       image,
       price,
@@ -110,12 +114,14 @@ export async function updateProduct(formData: FormData) {
   const { seller } = await requireSellerSession("/seller/dashboard");
   const productId = readTrimmedString(formData, "productId");
   const title = readTrimmedString(formData, "title");
+  const category = readTrimmedString(formData, "category");
+  const material = readOptionalString(formData, "material");
   const description = readOptionalString(formData, "description");
   const image = readOptionalString(formData, "image");
   const price = parsePrice(readTrimmedString(formData, "price"));
 
-  if (!productId || !title) {
-    throw new Error("Product id and title are required.");
+  if (!productId || !title || !category) {
+    throw new Error("Product id, title, and category are required.");
   }
 
   const product = await prisma.product.findFirst({
@@ -133,6 +139,8 @@ export async function updateProduct(formData: FormData) {
     where: { id: product.id },
     data: {
       title,
+      category,
+      material,
       description,
       image,
       price,
