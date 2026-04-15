@@ -66,11 +66,17 @@ export default async function ProductDetailsPage({ params }: PageProps) {
 
         <div className="grid gap-10 rounded-2xl bg-white p-8 shadow-lg md:grid-cols-2">
           <div className="overflow-hidden rounded-xl">
-            <img
-              src={product.image || ""}
-              alt={product.title}
-              className="h-full w-full object-cover"
-            />
+            {product.image ? (
+              <img
+                src={product.image}
+                alt={product.title}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex min-h-[20rem] items-center justify-center bg-stone-100 text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
+                No image available
+              </div>
+            )}
           </div>
 
           <div>

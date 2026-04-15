@@ -6,11 +6,17 @@ export default function ProductCard({ product }) {
   return (
     <article className="overflow-hidden rounded-lg bg-[#F5DEB3] shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="h-60 w-full overflow-hidden">
-        <img
-          src={product.image || ""}
-          alt={product.title}
-          className="h-full w-full object-cover"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.title}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-stone-100 text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
+            No image available
+          </div>
+        )}
       </div>
       <div className="p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A0522D]">
