@@ -1,99 +1,36 @@
-// ===============================
-// TESTING CHECKLIST (USE THIS FOR SUBMISSION)
-// ===============================
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-/*
-✅ RESPONSIVENESS
-- Mobile (≤640px): navbar collapses, 1 column grid
-- Tablet (≥640px): 2 columns
-- Desktop (≥768px): 3 columns
+## Getting Started
 
-✅ ACCESSIBILITY (WCAG 2.1 BASICS)
-- Buttons have clear labels
-- Images have alt/aria labels
-- Good color contrast
-- Semantic HTML used (header, main, section, footer)
+First, run the development server:
 
-✅ UI / UX
-- Consistent spacing (padding, margin)
-- Smooth hover effects
-- Readable typography
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-✅ FUNCTIONALITY
-- Mobile menu toggles correctly
-- Buttons clickable
-- No console errors
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-✅ FINAL CHECK
-- Test on Chrome DevTools
-- Test resizing screen manually
-- Ensure no layout breaks
-*/
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-
-
-
-
-
-
-
-# Handcrafted Haven
-
-## About the Project
-Handcrafted Haven is a web application that brings together talented artisans and people who love unique, handcrafted items. It’s a place where creators can share their stories and showcase their products, and where shoppers can discover one-of-a-kind treasures. Our goal is to support creativity, promote sustainable shopping, and build a community of makers and buyers who care about quality and craftsmanship.
-
-## Features
-- **Artisan Profiles** – Sellers can create profiles, share their story, and showcase their products.  
-- **Product Listings** – Add items with images, descriptions, and prices for easy browsing.  
-- **Reviews & Ratings** – Users can leave feedback to help others make decisions.  
-- **Responsive Design** – Works smoothly on desktops, tablets, and phones.  
-- **Accessible & User-Friendly** – Built with accessibility standards in mind.
-
-## Technologies Used
-- **Front-End:** HTML, CSS, JavaScript, Next.js  
-- **Back-End:** Node.js with a database (MongoDB or PostgreSQL)  
-- **Project Management:** GitHub Boards  
-- **Code Management:** Git & GitHub  
-- **Deployment:** Vercel  
-
-## Design & Styling Evidence
-**Color Scheme:**  
-- Primary: `#A0522D` – warm sienna brown (buttons, headers)  
-- Secondary: `#F5DEB3` – wheat (card backgrounds, sections)  
-- Accent: `#8FBC8F` – soft green (highlights, call-to-action buttons)  
-- Text: `#333333` – dark charcoal  
-- Background: `#FFF8F0` – soft off-white  
-
-**Typography:**  
-- Headings: Serif fonts (`Merriweather`, `Playfair Display`) → `font-serif`  
-- Body text: Sans-serif fonts (`Inter`, `Roboto`) → `font-sans`  
- 
-
-**UI & Layout Evidence:**  
-- Product cards: `rounded-lg`, `shadow-md`, hover effect `hover:shadow-xl`   
-- Buttons: Primary: Sienna brown with white text, hover changes to soft green  
-
----
-
-## Our Team
-- **Ukeje Adadinobi Mirian**  
-- **Matthew Onome Akhabue**  
-- **Richard Oshiomole Ogboanoh**  
-- **Nirintsoa Liva Jhonson Rabarih**
-- **Shared Lopez Serrano**
-
-## Why We Built This
-We wanted to create a space where artisans can reach more people and where buyers can find products that feel personal and special. This project also gave our team a chance to learn full-stack web development, collaborate effectively, and bring an idea to life from start to finish.
-
-## How to Run It Locally
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/mirianukeje/handcrafted-haven.git
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -39,23 +39,6 @@ export default async function SignInPage({ searchParams }: SignInPageProps) {
             experience.
           </p>
 
-          <div className="mt-8 rounded-3xl bg-white/10 p-6 backdrop-blur-sm">
-            <h2 className="text-lg font-semibold">Demo seller accounts</h2>
-            <div className="mt-4 space-y-3 text-sm">
-              <p>
-                <span className="font-semibold">Liva:</span>{" "}
-                <span className="font-mono">liva@handcraftedhaven.test</span>
-              </p>
-              <p>
-                <span className="font-semibold">Shared:</span>{" "}
-                <span className="font-mono">shared@handcraftedhaven.test</span>
-              </p>
-              <p>
-                <span className="font-semibold">Password:</span>{" "}
-                <span className="font-mono">demo12345</span>
-              </p>
-            </div>
-          </div>
         </section>
 
         <section className="rounded-[2rem] border border-stone-200 bg-white p-8 shadow-sm">
