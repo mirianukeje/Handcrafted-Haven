@@ -48,11 +48,20 @@ export default async function SellersPage() {
               className="group rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="flex items-center gap-4">
-                <img
-                  src={seller.image || ""}
-                  alt={seller.name}
-                  className="h-16 w-16 rounded-full object-cover"
-                />
+                {seller.image ? (
+                  <img
+                    src={seller.image}
+                    alt={seller.name}
+                    className="h-16 w-16 rounded-full object-cover"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-lg font-semibold text-amber-800"
+                  >
+                    {seller.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
 
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 group-hover:text-amber-700">

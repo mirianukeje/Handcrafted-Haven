@@ -26,11 +26,20 @@ export default function SellerProfile({ username }) {
           <div className="px-5 pt-6 pb-8 sm:px-8">
             <div className="mt-2 flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between">
               <div className="flex flex-col items-center gap-4 md:flex-row md:items-end">
-                <img
-                  src={seller.image}
-                  alt={seller.name}
-                  className="h-20 w-20 rounded-full bg-stone-100 object-cover shadow-md sm:h-24 sm:w-24"
-                />
+                {seller.image ? (
+                  <img
+                    src={seller.image}
+                    alt={seller.name}
+                    className="h-20 w-20 rounded-full bg-stone-100 object-cover shadow-md sm:h-24 sm:w-24"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    className="flex h-20 w-20 items-center justify-center rounded-full bg-amber-100 text-2xl font-semibold text-amber-800 shadow-md sm:h-24 sm:w-24"
+                  >
+                    {seller.name.charAt(0).toUpperCase()}
+                  </div>
+                )}
 
                 <div className="text-center md:text-left">
                   <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-700">
